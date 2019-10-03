@@ -9,7 +9,9 @@ while loop == 'Errei!':
 
     if data != None:   #se data for diferente de none carac le quantos caracteres tem em data
         carac = len(data)
-    if data == None:   #se data for none da outro valor em data muda pra ser um erro
+    if data == None:   #se data for none finaliza o Script
+        exit()
+    elif carac == 0:    #se o usuario não escrever nada da outro valor em data muda pra ser um erro
         data = '... será no dia éé ... Ué? ... Você deveria escrever uma data sabia!'
     elif carac != 10:   #se o numero de caracteres for diferente de 10 (carac) o data muda pra ser um erro
         data = '... Deveria ser 10 caracteres, parecido com 00/00/2019  com ( / ) e ano completo'
@@ -19,7 +21,7 @@ while loop == 'Errei!':
     loop = pyautogui.confirm(text='a viagem vai ser no dia '+data, title='', buttons=['Ok', 'Errei!'])
 #aqui ^ confirma com o usuario o valor de data e da um valor novo em loop (que mantem o while)
 
-#nos proximos 3 if se verifica o valor de data e se estiver com algum dos erros listados anteriores muda o loop pra Errei!(para se manter em while)
+#nos proximos 3 if se verifica o valor de data e se estiver com algum dos erros listados  muda o loop para Errei!(para se manter em while)
     if data == '... será no dia éé ... Ué? ... Você deveria escrever uma data sabia!':
         loop = 'Errei!'
     if data == '... Deveria ser 10 caracteres, parecido com 00/00/2019  com ( / ) e ano completo':
